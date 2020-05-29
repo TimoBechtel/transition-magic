@@ -1,0 +1,53 @@
+{
+	"name": "transition-master",
+	"version": "0.0.1",
+	"description": "Programatically set css transition progress",
+	"source": "src/index.js",
+	"main": "dist/index.js",
+	"module": "dist/index.modern.js",
+	"unpkg": "dist/index.umd.js",
+	"types": "src/index.d.ts",
+	"scripts": {
+		"build": "microbundle && npm run build:example",
+		"build:example": "microbundle build -f es -o example/dist/index.js",
+		"dev": "microbundle watch",
+		"dev:example": "microbundle watch -f es -o example/dist/index.js",
+		"prepare": "npm run build",
+		"lint": "eslint src",
+		"test": "npm run lint"
+	},
+	"files": [
+		"src",
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TimoBechtel/transition-master.git"
+	},
+	"keywords": [
+		"transition",
+		"animation",
+		"css",
+		"javascript"
+	],
+	"author": "Timo Bechtel",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/TimoBechtel/transition-master/issues"
+	},
+	"homepage": "https://github.com/TimoBechtel/transition-master#readme",
+	"devDependencies": {
+		"@compactjs/remap": "^1.0.0",
+		"@semantic-release/changelog": "^5.0.1",
+		"@semantic-release/git": "^9.0.0",
+		"cz-conventional-changelog": "^3.2.0",
+		"eslint": "^6.8.0",
+		"microbundle": "^0.12.0",
+		"semantic-release": "^17.0.8"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
+}
