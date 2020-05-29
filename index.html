@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>transition-master</title>
+	</head>
+	<body>
+		<header>
+			<h1>
+				🧙‍♂️ Transition-Master -
+				<a href="https://github.com/TimoBechtel/transition-master">Github</a>
+			</h1>
+		</header>
+		<style>
+			h1 {
+				padding: 10px;
+			}
+			a {
+				color: rgba(0, 0, 0, 0.85);
+			}
+			body {
+				height: 300vh;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+					Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				color: rgba(0, 0, 0, 0.85);
+			}
+			#transitioned {
+				position: fixed;
+				background: rgb(3, 129, 212);
+				color: white;
+				border-radius: 3px;
+				padding: 10px 20px;
+				top: 100px;
+				min-width: 500px;
+				text-align: center;
+			}
+
+			.content {
+				margin-top: 200px;
+			}
+		</style>
+		<h1 id="transitioned">Scroll for awesomeness.</h1>
+		<section class="content">
+			<h2>Some content.</h2>
+			<p>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+				labore ducimus ut, aperiam doloremque quibusdam aliquid placeat fuga ad
+				soluta eius, fugiat iusto expedita facere minus ipsam ea tenetur
+				similique.
+			</p>
+		</section>
+		<script type="module">
+			import {
+				Transition,
+				translateX,
+				rotate,
+				scale,
+			} from './dist/index.module.js';
+
+			let scrollHeight = Math.max(
+				document.body.scrollHeight,
+				document.documentElement.scrollHeight,
+				document.body.offsetHeight,
+				document.documentElement.offsetHeight,
+				document.body.clientHeight,
+				document.documentElement.clientHeight
+			);
+
+			const animation = Transition(
+				document.querySelector('#transitioned'),
+				scrollHeight - document.documentElement.clientHeight
+			)
+				.addKeyframe(
+					[
+						{
+							propertyName: 'text-transform',
+							computedValue: (newValue) =>
+								newValue < 1 ? 'none' : 'uppercase',
+							sourceValue: 0,
+							targetValue: 1,
+						},
+					],
+					0.7,
+					0.7
+				)
+				.addKeyframe([translateX(-2000)], 0.8, 1)
+				.addKeyframe(
+					[
+						{
+							propertyName: 'opacity',
+							computedValue: (newValue) => newValue,
+							sourceValue: 1,
+							targetValue: 0.5,
+						},
+					],
+					0.5,
+					1
+				)
+				.addKeyframe(
+					[
+						rotate(360),
+						scale(4),
+						{
+							propertyName: 'background-color',
+							computedValue: (newValue) => `rgb(${newValue}, 150, 150)`,
+							sourceValue: 0,
+							targetValue: 255,
+						},
+					],
+
+					0,
+					0.8
+				);
+
+			window.addEventListener('scroll', () => {
+				const currentScrollTop =
+					window.pageYOffset || document.documentElement.scrollTop;
+				animation.set(currentScrollTop);
+			});
+			animation.set(window.pageYOffset || document.documentElement.scrollTop);
+		</script>
+	</body>
+</html>
