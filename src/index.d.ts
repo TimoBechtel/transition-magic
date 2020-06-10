@@ -1,4 +1,4 @@
-declare module 'transition-master';
+declare module 'transition-magic';
 
 interface TransitionAPI {
 	/**

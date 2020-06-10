@@ -1,5 +1,5 @@
 {
-	"name": "transition-master",
+	"name": "transition-magic",
 	"version": "1.0.0",
 	"description": "Programatically set css transition progress",
 	"source": "src/index.js",
@@ -22,7 +22,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/TimoBechtel/transition-master.git"
+		"url": "git+https://github.com/TimoBechtel/transition-magic.git"
 	},
 	"keywords": [
 		"transition",
@@ -33,9 +33,9 @@
 	"author": "Timo Bechtel",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/TimoBechtel/transition-master/issues"
+		"url": "https://github.com/TimoBechtel/transition-magic/issues"
 	},
-	"homepage": "https://github.com/TimoBechtel/transition-master#readme",
+	"homepage": "https://github.com/TimoBechtel/transition-magic#readme",
 	"devDependencies": {
 		"@compactjs/remap": "^1.0.0",
 		"@semantic-release/changelog": "^5.0.1",

@@ -1,20 +1,20 @@
-<h1 align="center">🧙‍♂️ transition-master</h1>
+<h1 align="center">✨ transition-magic</h1>
 <h3 align="center">Programatically set css transition progress</h3>
 <p align="center">
-  <a href="https://www.npmjs.com/package/transition-master" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/transition-master.svg">
+  <a href="https://www.npmjs.com/package/transition-magic" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/transition-magic.svg">
   </a>
-  <a href="https://github.com/TimoBechtel/transition-master/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/TimoBechtel/transition-master" />
+  <a href="https://github.com/TimoBechtel/transition-magic/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/TimoBechtel/transition-magic" />
   </a>
 </p>
 <p align="center">
   ·
-  <a href="https://github.com/TimoBechtel/transition-master#readme">Homepage</a>
+  <a href="https://github.com/TimoBechtel/transition-magic#readme">Homepage</a>
   ·
-  <a href="https://timobechtel.github.io/transition-master">View Demo</a>
+  <a href="https://timobechtel.github.io/transition-magic">View Demo</a>
   ·
-  <a href="https://github.com/TimoBechtel/transition-master/issues">Report Bug / Request Feature</a>
+  <a href="https://github.com/TimoBechtel/transition-magic/issues">Report Bug / Request Feature</a>
   ·
 </p>
 
@@ -32,12 +32,12 @@
 ### NPM:
 
 ```sh
-npm install transition-master
+npm install transition-magic
 ```
 
 ### Other:
 
-Download https://unpkg.com/transition-master/dist/index.umd.js and link it in your html head:
+Download https://unpkg.com/transition-magic/dist/index.umd.js and link it in your html head:
 
 ```html
 <script src="index.umd.js"></script>
@@ -48,18 +48,18 @@ Download https://unpkg.com/transition-master/dist/index.umd.js and link it in yo
 ### As module:
 
 ```javascript
-import { Transition } from 'transition-master';
+import { Transition } from 'transition-magic';
 ```
 
 Or when linked in html head:
 
 ```javascript
-const { Transition } = transitionMaster;
+const { Transition } = transitionMagic;
 ```
 
 ### Example:
 
-Checkout the [demo](https://timobechtel.github.io/transition-master).
+Checkout the [demo](https://timobechtel.github.io/transition-magic).
 
 ### Quick start:
 
@@ -199,7 +199,7 @@ npm run test
 
 Contributions, issues and feature requests are welcome!<br />
 
-1. Check [issues](https://github.com/TimoBechtel/transition-master/issues)
+1. Check [issues](https://github.com/TimoBechtel/transition-magic/issues)
 1. Fork the Project
 1. Create your Feature Branch (`git checkout -b feat/AmazingFeature`)
 1. Test your changes `npm run test`
@@ -217,7 +217,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Distributed under the [MIT](https://github.com/TimoBechtel/transition-master/blob/master/LICENSE) License.
+Distributed under the [MIT](https://github.com/TimoBechtel/transition-magic/blob/master/LICENSE) License.
 
 ---
 
