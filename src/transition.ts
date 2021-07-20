@@ -1,3 +1,4 @@
+import { accept as select, UniversalElementSelector } from '@compactjs/uea';
 import { between, map } from './utils';
 
 /**
@@ -6,7 +7,7 @@ import { between, map } from './utils';
  * @param duration duration in frames
  */
 export function Transition(
-	element: HTMLElement,
+	selector: UniversalElementSelector,
 	duration: number
 ): TransitionAPI {
 	const keyFrames: Keyframe[] = [];
@@ -47,7 +48,7 @@ export function Transition(
 				});
 			}
 		});
-		applyStyles(element, styles);
+		select(selector).forEach((el) => applyStyles(el, styles));
 	};
 	return {
 		addKeyframe(cssProperties, start, end) {

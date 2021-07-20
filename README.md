@@ -121,7 +121,12 @@ animation.set(100);
  * @param element
  * @param duration duration in frames
  */
-function Transition(element: HTMLElement, duration: number): TransitionAPI;
+function Transition(
+	// can be an HTMLElement, array of HTMLElements or a css selector
+	// see: https://github.com/CompactJS/uea#doc
+	selector: UniversalElementSelector,
+	duration: number
+): TransitionAPI;
 
 interface TransitionAPI {
 	/**
@@ -151,15 +156,18 @@ interface TransitionAPI {
 	set(frame: number): void;
 }
 
+// any writable style property of HTMLElements
+type WritableStyleProperties = WritablePart<HTMLElement['style']>;
+
 /**
  * Defines how a CSS property is transitioned
  */
-interface PropertyDefinition {
+export interface PropertyDefinition {
 	/**
 	 * css property name
 	 * @example opacity
 	 */
-	propertyName: string;
+	propertyName: keyof WritableStyleProperties;
 	/**
 	 * defines how a css property value is generated
 	 */

@@ -42,7 +42,8 @@
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^7.31.0",
 		"microbundle": "^0.13.3",
-		"semantic-release": "^17.4.4"
+		"semantic-release": "^17.4.4",
+		"@compactjs/uea": "^1.0.3"
 	},
 	"config": {
 		"commitizen": {
