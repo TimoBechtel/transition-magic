@@ -1,2 +1,2 @@
-export { Transition } from './transition';
-export { rotate, scale, translateX, translateY } from './transitionTemplates';
+export * from './transition';
+export * from './transitionTemplates';

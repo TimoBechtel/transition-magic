@@ -156,18 +156,15 @@ interface TransitionAPI {
 	set(frame: number): void;
 }
 
-// any writable style property of HTMLElements
-type WritableStyleProperties = WritablePart<HTMLElement['style']>;
-
 /**
  * Defines how a CSS property is transitioned
  */
-export interface PropertyDefinition {
+export type PropertyDefinition = {
 	/**
 	 * css property name
 	 * @example opacity
 	 */
-	propertyName: keyof WritableStyleProperties;
+	propertyName: keyof PropertiesHyphen<string>; // css properties, provided by csstype
 	/**
 	 * defines how a css property value is generated
 	 */
@@ -180,7 +177,7 @@ export interface PropertyDefinition {
 	 * target css value
 	 */
 	targetValue: number;
-}
+};
 
 // TransitionDefinition templates
 function rotate(from: number, to?: number): PropertyDefinition;

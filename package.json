@@ -36,16 +36,19 @@
 	"homepage": "https://github.com/TimoBechtel/transition-magic#readme",
 	"devDependencies": {
 		"@compactjs/remap": "^1.0.1",
+		"@compactjs/uea": "^1.0.3",
 		"@semantic-release/changelog": "^5.0.1",
 		"@semantic-release/git": "^9.0.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"microbundle": "^0.13.3",
-		"semantic-release": "^17.4.4",
-		"@compactjs/uea": "^1.0.3"
+		"semantic-release": "^17.4.4"
 	},
 	"config": {
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
 		}
+	},
+	"dependencies": {
+		"csstype": "^3.0.8"
 	}
 }

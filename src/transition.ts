@@ -1,5 +1,10 @@
 import { accept as select, UniversalElementSelector } from '@compactjs/uea';
+import { PropertiesHyphen } from 'csstype';
 import { between, map } from './utils';
+
+type StyleDefinition = {
+	[key in keyof PropertiesHyphen<string>]: string;
+};
 
 /**
  * Creates a transitional object
@@ -14,7 +19,7 @@ export function Transition(
 	let currentFrame = 0;
 	let outOfFrame = false;
 	const update = () => {
-		const styles: Partial<StyleDefinition> = {};
+		const styles: StyleDefinition = {};
 		keyFrames.forEach((keyframe) => {
 			const properties = keyframe.css;
 			if (
@@ -87,7 +92,7 @@ export function Transition(
 	};
 }
 
-function applyStyles(element: HTMLElement, styles: Partial<StyleDefinition>) {
+function applyStyles(element: HTMLElement, styles: StyleDefinition) {
 	Object.entries(styles).forEach(([prop, style]) => {
 		if (style !== undefined) element.style.setProperty(prop, style);
 	});
@@ -121,17 +126,15 @@ interface TransitionAPI {
 	set(frame: number): void;
 }
 
-type WritableStyleProperties = WritablePart<HTMLElement['style']>;
-
 /**
  * Defines how a CSS property is transitioned
  */
-export interface PropertyDefinition {
+export type PropertyDefinition = {
 	/**
 	 * css property name
 	 * @example opacity
 	 */
-	propertyName: keyof WritableStyleProperties;
+	propertyName: keyof PropertiesHyphen<string>;
 	/**
 	 * defines how a css property value is generated
 	 */
@@ -144,30 +147,9 @@ export interface PropertyDefinition {
 	 * target css value
 	 */
 	targetValue: number;
-}
-
-type StyleDefinition = {
-	[key in keyof WritableStyleProperties]: string;
 };
-
 interface Keyframe {
 	css: PropertyDefinition[];
 	start: number;
 	end: number;
 }
-
-type IfEquals<X, Y, A, B> = (<T>() => T extends X ? 1 : 2) extends <
-	T
->() => T extends Y ? 1 : 2
-	? A
-	: B;
-
-type WritableKeysOf<T> = {
-	[P in keyof T]: IfEquals<
-		{ [Q in P]: T[P] },
-		{ -readonly [Q in P]: T[P] },
-		P,
-		never
-	>;
-}[keyof T];
-type WritablePart<T> = Pick<T, WritableKeysOf<T>>;
