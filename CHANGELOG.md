@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/TimoBechtel/transition-magic/compare/v2.1.0...v2.1.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* **types:** autocomplete using camel case instead of hyphen ([6a9a98b](https://github.com/TimoBechtel/transition-magic/commit/6a9a98b02c7c802720ea3794adcbea09d94f38a2))
+
 # [2.1.0](https://github.com/TimoBechtel/transition-magic/compare/v2.0.0...v2.1.0) (2021-07-20)
 
 
